@@ -106,3 +106,5 @@ dist
 #Stuff I included
 config.json
 value.env
+server/*
+deploy-commands.js
