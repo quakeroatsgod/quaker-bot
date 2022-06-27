@@ -11,9 +11,9 @@ client.once('ready', (client) => {
     var hours = new Date().getHours();
     var welcomeMattMessage=``
     //Changes the login message to ping matt based on the time of day
-    if(hours > 3 || hours < 12)     welcomeMattMessage=`Good morning <@${mattId}>`
-    else if(hours == 12 || hours < 18)   welcomeMattMessage=`Good afternoon <@${mattId}>`
-    else    welcomeMattMessage=`Good evening <@${mattId}>`
+    if(hours > 3 && hours < 12)     welcomeMattMessage=`Good morning <@${mattId}>`
+    else if(hours > 11 && hours < 18)   welcomeMattMessage=`Good afternoon <@${mattId}>`
+    else if(hours > 17 || hours < 4)  welcomeMattMessage=`Good evening <@${mattId}>`
     //Sends a message to the cursed channel
     client.channels.cache.get(pingMattChannelId).send(welcomeMattMessage);
 });
