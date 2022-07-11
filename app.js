@@ -36,6 +36,12 @@ client.on('messageCreate', async (message) => {
     if(message.author.id===clientId) return;
     //If the message was sent in #ping-matt-here
     if(message.channel.id===pingMattChannelId)  return message.channel.send(`<@${mattId}>`)
+    if(message.author.id==mattId)   {
+        if(Math.random() % 20 === 1){
+            message.delete()
+            return message.channel.send(`lmao`)
+        }
+    }
 });
 
 
